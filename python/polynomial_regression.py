@@ -47,11 +47,11 @@ def main():
     y = (np.array(y) - np.mean(y)) / np.std(y)
 
     # 回帰係数の計算 (2次多項式を例に)
-    degrees = [1, 3, 6, 9]
+    degrees = [1, 2, 3, 4, 5, 6, 9]
     for degree in degrees:
-        print(f"\nn次 degree = {degree}")
+        print(f"\n Degree = {degree}")
         X = np.vstack([x**i for i in range(degree + 1)]).T
-        w = calculate_polynomial_regression_weights(X, y, degree=degree)
+        w = calculate_polynomial_regression_weights(X, y)
         print(f"回帰係数 w = {w}")
 
         # 二乗損失の計算

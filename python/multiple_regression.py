@@ -28,16 +28,12 @@ def plot_multiple_regression(X, y, w, xlabel="Feature 1 (x1)", ylabel="Feature 2
     ax = fig.add_subplot(111, projection='3d')
 
     # データ点をプロット
-    ax.scatter(x_1, x_2, y, label="Data Points", color="blue")
+    ax.scatter(x_1, x_2, y, label=None, color="blue")
     
     # 重回帰平面を描画
     x1_surf, x2_surf = np.meshgrid(np.linspace(min(x_1), max(x_1), 10), np.linspace(min(x_2), max(x_2), 10))
     y_surf = w[0] + w[1] * x1_surf + w[2] * x2_surf
     ax.plot_surface(x1_surf, x2_surf, y_surf, color="red", alpha=0.5, rstride=100, cstride=100)
-
-    # 各点の二乗誤差を示す線をプロット
-    for xi1, xi2, yi, y_pred_i in zip(x_1, x_2, y, y_pred):
-        ax.plot([xi1, xi1], [xi2, xi2], [yi, y_pred_i], color="gray", linestyle="--")
 
     # 軸ラベルの設定
     ax.set_xlabel(xlabel)
@@ -56,6 +52,7 @@ def main():
     ones = np.ones(len(x_1))
     X = np.column_stack((ones, x_1, x_2))
     y = train_df['SalePrice'][:20].tolist()
+    
     # x_1 = train_df['LotArea'].tolist()
     # x_2 = train_df['1stFlrSF'].tolist()
     # ones = np.ones(len(x_1))
