@@ -9,7 +9,7 @@ def calculate_multiple_regression_weights(X, y):
     return w
 
 # 二乗損失を計算する関数
-def calculate_squared_loss(X, y, w):
+def calculate_multiple_regression_squared_loss(X, y, w):
     # 予測値を計算
     y_pred = X @ w
     
@@ -18,7 +18,7 @@ def calculate_squared_loss(X, y, w):
     return total_loss / len(y)
 
 # プロットする関数
-def plot_regression(X, y, w, xlabel="Feature 1 (x1)", ylabel="Feature 2 (x2)", zlabel="Target (y)"):
+def plot_multiple_regression(X, y, w, xlabel="Feature 1 (x1)", ylabel="Feature 2 (x2)", zlabel="Target (y)"):
     x_1 = X[:, 1]  # 第1特徴量
     x_2 = X[:, 2]  # 第2特徴量
     y_pred = X @ w  # 重回帰による予測値
@@ -49,7 +49,7 @@ def plot_regression(X, y, w, xlabel="Feature 1 (x1)", ylabel="Feature 2 (x2)", z
     plt.show()
 
 def main():
-    train_df = pd.read_csv('../data/HousePricesAdvancedRegressionTechniques/train.csv')
+    train_df = pd.read_csv('./data/HousePricesAdvancedRegressionTechniques/train.csv')
 
     x_1 = train_df['LotArea'][:20].tolist()
     x_2 = train_df['1stFlrSF'][:20].tolist()
@@ -67,11 +67,11 @@ def main():
     print(f"w = ({w}")
 
     # 二乗損失の計算
-    loss = calculate_squared_loss(X, y, w)
+    loss = calculate_multiple_regression_squared_loss(X, y, w)
     print("二乗誤差 = {}".format(loss))
 
     # プロット
-    plot_regression(X, y, w, xlabel='LotArea', ylabel='1stFlrSF', zlabel='SalePrice')
+    plot_multiple_regression(X, y, w, xlabel='LotArea', ylabel='1stFlrSF', zlabel='SalePrice')
 
 if __name__ == '__main__':
     main()

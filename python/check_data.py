@@ -2,7 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def main():
-    train_df = pd.read_csv('../data/HousePricesAdvancedRegressionTechniques/train.csv')
+    train_df = pd.read_csv('./data/HousePricesAdvancedRegressionTechniques/train.csv')
+
+    print(len(train_df))
     print(train_df.head())
     print(train_df.isnull().all())
 
