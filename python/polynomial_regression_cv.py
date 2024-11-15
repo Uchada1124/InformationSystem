@@ -41,7 +41,7 @@ def main():
             w = polynomial_regression.calculate_polynomial_regression_weights(X_train, y_train)
             
             # テストデータでの二乗誤差を計算
-            loss = polynomial_regression.calculate_squared_loss(X_test, y_test, w)
+            loss = polynomial_regression.calculate_polynomial_regressionsquared_loss(X_test, y_test, w)
             losses.append(loss)
             print(f"  Fold {i + 1}, Loss = {loss}")
 

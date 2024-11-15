@@ -8,7 +8,7 @@ def calculate_polynomial_regression_weights(X, y):
     return w
 
 # 二乗損失を計算する関数
-def calculate_squared_loss(X, y, w):
+def calculate_polynomial_regressionsquared_loss(X, y, w):
     y_pred = X @ w
     total_loss = np.sum((y - y_pred) ** 2) / len(y)
     return total_loss
@@ -55,7 +55,7 @@ def main():
         print(f"回帰係数 w = {w}")
 
         # 二乗損失の計算
-        loss = calculate_squared_loss(X, y, w)
+        loss = calculate_polynomial_regressionsquared_loss(X, y, w)
         print("二乗誤差 = {}".format(loss))
 
         # プロット
