@@ -15,8 +15,8 @@ GarageArea: Size of garage in square feet
 import pandas as pd
 import numpy as np
 
-import multiple_regression
-import cross_validetion_utils
+import Python.Regression.multiple_regression as multiple_regression
+import Python.Regression.cross_validetion_utils as cross_validetion_utils
 
 def get_feature_pairs(features):
     feature_pairs = []

@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-import simple_regression
+import Python.Regression.simple_regression as simple_regression
 
 # 勾配降下法で単回帰の係数を推定する関数
 def gradient_descent(x, y, learning_rate=0.01, epochs=10000):

@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-import simple_regression
+import Python.Regression.simple_regression as simple_regression
 
 def stochastic_gradient_descent(x, y, learning_rate=0.01, epochs=10000):
     w = 0  # 傾きの初期値
