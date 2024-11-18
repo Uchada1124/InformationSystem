@@ -35,7 +35,7 @@ def main():
     features = ['TotalBsmtSF', '1stFlrSF', '2ndFlrSF', 'GrLivArea', 'GarageArea']
 
     y = train_df['SalePrice'].tolist()
-    # 正規化
+    # 標準化
     y = (np.array(y) - np.mean(y)) / np.std(y)
     
     best_loss = float('inf')
@@ -45,7 +45,7 @@ def main():
         x_1 = train_df[feature_pair[0]].tolist()
         x_2 = train_df[feature_pair[1]].tolist()
 
-        # 正規化
+        # 標準化
         x_1 = (np.array(x_1) - np.mean(x_1)) / np.std(x_1)
         x_2 = (np.array(x_2) - np.mean(x_2)) / np.std(x_2)
         

@@ -31,7 +31,7 @@ def main():
     x = train_df['LotArea'][:20].tolist()
     y = train_df['SalePrice'][:20].tolist()
 
-    # 正規化
+    # 標準化
     x = (np.array(x) - np.mean(x)) / np.std(x)
     y = (np.array(y) - np.mean(y)) / np.std(y)
 
