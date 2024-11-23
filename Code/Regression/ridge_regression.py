@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-import Python.Regression.polynomial_regression as polynomial_regression
+import polynomial_regression
 
 # Ridge回帰を計算する関数
 def calculate_ridge_regression_weights(X, y, alpha):

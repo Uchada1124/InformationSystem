@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 
-import Python.Regression.polynomial_regression as polynomial_regression
-import Python.Regression.cross_validetion_utils as cross_validetion_utils
+import polynomial_regression
+import cross_validetion_utils
 
 def main():
     train_df = pd.read_csv('./data/HousePricesAdvancedRegressionTechniques/train.csv')
